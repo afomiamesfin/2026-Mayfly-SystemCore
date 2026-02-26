@@ -132,17 +132,7 @@ public class RobotState {
     }
 
     public void output() {
-        Logger.recordOutput("Swerve Module States", drivetrainState.ModuleStates);
-        Logger.recordOutput("Swerve Module Goals", drivetrainState.ModuleTargets);
         Logger.recordOutput("Current Pose", drivetrainState.Pose);
-        Logger.recordOutput("Goal Align Pose", getAlignPose());
-        Logger.recordOutput(
-                "Goal Left Alignment",
-                getFieldToRobot()
-                        .nearest(isRedAlliance() ? FieldConstants.redLeftBranches : FieldConstants.blueLeftBranches));
-        Logger.recordOutput(
-                "Goal Right Alignment",
-                getFieldToRobot()
-                        .nearest(isRedAlliance() ? FieldConstants.redRightBranches : FieldConstants.blueRightBranches));
+        Logger.recordOutput("Auto Start Pose", autoStartPose);
     }
 }
